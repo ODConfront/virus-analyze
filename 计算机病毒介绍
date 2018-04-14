@@ -30,7 +30,28 @@
 4. 操作系统版本依赖性
 5. 文件系统依赖性：簇病毒/NTFS流病毒/NTFS压缩病毒/ISO镜像文件病毒
 6. 文件格式依赖性：DOS-COM/DOS-EXE/16位Windows/OS_2/32位Windows/UNIX上ELF病毒/设备驱动程序病毒/目标代码和库文件病毒
-7. 解释环境依赖性：微软产品宏病毒/IBM系统REXX病毒/DEC_VMS上DCL病毒/UNIX上shell脚本/Windows上VBS病毒/批处理病毒/mIRC_PIRCH脚本即使消息病毒/SuperLogo病毒
+7. 解释环境依赖性：
+微软产品宏病毒/IBM系统REXX病毒/DEC_VMS上DCL病毒/UNIX上shell脚本/Windows上VBS病毒/批处理病毒/mIRC_PIRCH脚本即使消息病毒/
+SuperLogo病毒/JS病毒/Perl病毒/Python病毒/VIM病毒/EMACS病毒/TCL病毒/PHP病毒/MapInfo病毒/SAP上ABAP病毒/Windows帮助文档病毒/
+PDF中JS病毒/AppleScript病毒/ANSI的依存关系/MacromediaFlash动作脚本病毒/HyperTalk脚本威胁/AutoLisp病毒/注册表依赖性/
+PIF和LNK的依赖性/LotusWord中宏病毒/AmiPro的文档病毒/Corel病毒/Lotus宏病毒/Windows安装脚本病毒/AUTORUN.INF和WindowsINFFile病毒/
+HTML病毒
+8. 系统漏洞依赖性
+9. 日期和时间依赖性
+10.JIT依赖性：Microsoft.Net病毒
+11.档案文件格式依赖性
+12.基于扩展名的文件格式依赖性
+13.网络协议依赖性
+14.源代码依赖关系
+15.Mac和Palm平台资源依赖性
+16.宿主大小依赖性
+17.调试器依赖性
+18.编译器和连接器依赖性 
+19.设备翻译层依赖性
+20.嵌入式对象插入依赖性
+21.自包含环境的依赖性
+22.复合病毒
+
 
 ////////////////////////////////////////////////////////
 // 参考
