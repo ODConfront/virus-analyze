@@ -22,7 +22,18 @@
 // 病毒命名规范
 [<malware_type>://][<platform>/]<family_name>[.<group_name>][.<infective_length>][.<variant>[<davolution>]][<modifers>]
 
-参考：
+////////////////////////////////////////////////////////
+// 环境依赖性
+1. 计算机体系依赖性
+2. CPU依赖性
+3. 操作系统依赖性
+4. 操作系统版本依赖性
+5. 文件系统依赖性：簇病毒/NTFS流病毒/NTFS压缩病毒/ISO镜像文件病毒
+6. 文件格式依赖性：DOS-COM/DOS-EXE/16位Windows/OS_2/32位Windows/UNIX上ELF病毒/设备驱动程序病毒/目标代码和库文件病毒
+7. 解释环境依赖性：微软产品宏病毒/IBM系统REXX病毒/DEC_VMS上DCL病毒/UNIX上shell脚本/Windows上VBS病毒/批处理病毒/mIRC_PIRCH脚本即使消息病毒/SuperLogo病毒
+
+////////////////////////////////////////////////////////
+// 参考
 1. 《计算机病毒防范艺术》
 2. 《恶意代码分析实战》
 3. 《0day安全-软件漏洞分析技术》
