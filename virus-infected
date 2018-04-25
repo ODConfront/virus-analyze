@@ -47,6 +47,13 @@
 3.2 不增加新的节头部的追加病毒：W95/Anxiety病毒/W32/Zelly病毒
 3.3 不修改入口点的追加病毒：W32/Cabanas病毒
 3.4 感染KERNEL32.DLL病毒：W95/Lorez病毒
+3.5 伴生病毒：W95/Spawn.4096病毒
+3.6 分割型蛀穴感染：W95/CIH病毒
+3.7 修改DOS存根程序中的Ifanew域：W95/Cerebrus病毒
+3.8 基于VxD的Windows95病毒：W95/Memirial病毒
+3.9 作为VxD运行的PE病毒：W95/Harry和W95/Anxiety病毒
+3.10VxD病毒
+3.11DLL加载插入技术：W32/Initx病毒
 
 ////////////////////////////////////////////////////////
 // 参考
