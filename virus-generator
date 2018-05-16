@@ -1,8 +1,27 @@
 # virus-generator
 
 高级代码演化技术和病毒生成工具：
-1.
-
+1.加密病毒：Dos下Cascade，W95/Mad和W95/Zombie病毒
+1>改变循环的方向
+2>使用多层加密：W32/Zelly病毒
+3>多个解密循环一个接一个出现 
+4>只用一个解密循环 
+5>混淆解密引擎的开始位置
+6>使用非线性的解密引擎:W95/Fono病毒，使用密钥表的简单非线性加密替换算法：
+  W32/Chiton，W95/Drill和W32/Simile.D病毒
+  W32/Crypto和W32/Qint@mm、W95/Resur和W95/Silcer病毒
+  W32/Chiton和W32/Beagle病毒
+  
+2.寡行病毒（oligomorphic viruses）
+感染型产生的新病毒副本改变了解密引擎  
+  W95/Memorial和WordSwap病毒
+  
+3.多态病毒  
+感染型产生的新病毒副本大幅度改变了解密引擎  
+1>1260病毒
+2>DarkAvenger病毒中的突变引擎(MtE) 
+突变引擎负责为简单病毒添加多态外壳
+Trident多态引擎
 
 ////////////////////////////////////////////////////////
 // 参考
