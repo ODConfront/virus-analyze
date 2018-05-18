@@ -11,7 +11,7 @@ Dos下Cascade，W95/Mad和W95/Zombie病毒
 6>使用非线性的解密引擎:W95/Fono病毒，使用密钥表的简单非线性加密替换算法：
   W32/Chiton，W95/Drill和W32/Simile.D病毒
   W32/Crypto和W32/Qint@mm、W95/Resur和W95/Silcer病毒
-  W32/Chiton和W32/Beagle病毒
+  W32/Beagle病毒
   
 2.寡行病毒（oligomorphic viruses）
 感染型产生的新病毒副本改变了解密引擎  
