@@ -1,25 +1,6 @@
 # virus-introduce
 
 ////////////////////////////////////////////////////////
-// 行为分类
-1. 病毒
-2. 木马
-3. 蠕虫
-4. 漏洞利用
-5. 下载器
-6. 加密勒索
-7. 投放器（dropper）
-8. 注入程序
-9. auto-rooter
-10.工具包
-11.垃圾邮件发送程序
-12.洪泛攻击
-13.键盘记录
-14.rootkit
-15.广告软件
-16.间谍软件（信息窃取）
-
-////////////////////////////////////////////////////////
 // 病毒命名规范
 [<malware_type>://][<platform>/]<family_name>[.<group_name>][.<infective_length>][.<variant>[<davolution>]][<modifers>]
 
@@ -52,6 +33,41 @@ HTML病毒
 20.嵌入式对象插入依赖性
 21.自包含环境的依赖性
 22.复合病毒
+
+////////////////////////////////////////////////////////
+// 行为分类
+1. 病毒
+2. 木马
+3. 蠕虫
+4. 漏洞利用
+5. 下载器
+6. 加密勒索
+7. 投放器（dropper）
+8. 注入程序
+9. auto-rooter
+10.工具包
+11.垃圾邮件发送程序
+12.洪泛攻击
+13.键盘记录
+14.rootkit
+15.广告软件
+16.间谍软件（信息窃取）
+
+////////////////////////////////////////////////////////
+// 基于病毒载荷的分类方法
+1.没有载荷：WM/Concept
+2.偶然破坏型载荷：Stoned
+3.非破坏型载荷：WANK蠕虫、W95/Marburg、W32/SKA、W95/Haiku
+4.低破坏型载荷：W95/HPS、AntiEXE、WM/Wazzu.A
+5.强破坏型载荷
+5.1数据重写型病毒：Michelangelo、HungarianFiller、W32/Witty
+5.2数据欺骗：Dark_Avenger.1800.A、Ripper、WordSwap
+5.3数据加密：Disk Killer、KOH、Slovakian One_Half、W32/Crypto
+5.4破坏硬件：W95/CIH、AntiCMOS
+6.DoS攻击（拒绝服务）：W32/Slammer、W32/Blaster、W32/CodeRed、Linux/Slapper
+7.窃取数据：用病毒牟利
+7.1网络钓鱼攻击：W32/Mimail.I@mm
+7.2后门：W32/HLLW.Qaz.A(7597Port)、W32/Bugbear@mm
 
 ////////////////////////////////////////////////////////
 // 病毒特征检测
