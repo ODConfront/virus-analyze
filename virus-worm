@@ -35,6 +35,39 @@ Linux/Lion、Linux/Cheese、W32/CodeRed、W32/CodeGreen、W32/Bobax
 3.3.3组合扫描方法：W32/Welchia
 
 4.感染传播
+4.1攻击安装了后门的系统：W32/Borm、W32/Leaves
+4.2点对点的网络攻击：W32/Maax
+4.3即时消息攻击：W32/Choke
+4.4电子邮件蠕虫攻击和欺骗技术：W97M/Melissa、W32/Parvo、W32/Hyd
+4.5插入电子邮件的附件：Win/Redteam
+4.6SMTP代理攻击：W32/Taripox
+4.7SMTP攻击：Sircam、W32/Nimda、W32/ExploreZip、W32/Aliz
+4.8使用MX查询进行SMTP传播
+4.9NNTP攻击：Happy99
+
+5.常见的蠕虫代码传送和执行技术
+5.1基于可执行代码的攻击
+5.2连接到Web站点或者Web代理：W32/Beagle、W32/Aplore
+5.3基于HTML的邮件
+5.4基于远程登录的攻击
+5.5代码注入攻击：Perl/Santy、W32/Slammer、W32/CodeRed、W32/Lespaul
+5.6基于shellcode的攻击：W32/Blaster、W32/Welchia、Linux/Slapper
+
+6.计算机蠕虫的更新策略y：W95/Babylonia
+6.1在web和新闻组上的认证更新：W95/Hybrus
+6.2基于后门的更新：W32/Mydoom
+
+7.用信令进行远程控制：W32/Tendoolf
+点对点网络控制：Linux/Slapper
+
+8.有意无意的交互
+8.1合作：W32/Cholera、W32/Funlove、W32/Beagle、W32/Borm
+8.2竞争：Den_Zuko、W32/Welchia、W32/Sasser、W32/Dabber
+8.3简单蠕虫通信协议
+
+9.无线移动蠕虫：
+SymbOS/Cabir
+
 
 
 
