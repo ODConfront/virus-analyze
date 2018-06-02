@@ -52,6 +52,48 @@ ODS - on demand scan
 以生成一特征图张只包括所有恒值字节的特征图(map)。特征图中只能用恒值字节，因为可变数据会影响到效验和。
 
 3.算法扫描方法
+特定病毒的专用检测算法(virus-specific detection algorithm)
+采用病毒扫描语言(virus scanning language),这种语言允许对被扫描对象执行寻位(seek)和读(read)操作。因此这种算法可以如此进行：从文件头正向扫描、或从
+文件尾反向扫描、或从入口点开始扫描，一直寻找到一个特定位置。
+3.1过滤法(filtering):W32/Gobi、W95/Zmist
+3.2静态解密程序检测法：W95/Mad
+3.3X光检测法：W95/Drill、W95/SK
+for(p=0;p<0x700;p++)
+{
+  ch1 = buf[p]; ch1 = buf[p+1];
+  k1 = ch1^0xE8;q1 = ch2-k1;
+  k2 = ch1-0xE8;q2 = ch2-k2;
+  k3 = k1;q3 = ch2-ch1;
+  k4 = (-ch1)^0xE8;q4=-ch2-k4;
+  k5 = cha1^0xFF^0xE8;q5=(ch2^0xFF)-k5; /*XOR FF = NOT*/
+  
+  for(i=0;i<0x40;i++)
+  {
+    ch1 = buf[ptr+i];
+    buf[0x800+i]=ch1^k1;k1+=q1;
+    buf[0x900+i]=ch1-k2;k2+=q2;
+    buf[0xA00+i]=ch1^k3;k3=ch1+q3;
+    buf[0xB00+i]=(-ch1)^k4;k4+=q4;
+    buf[0xC00+i]=ch1^k5^0xFF;k5+=q5; /*XOR FF = NOT*/
+  }
+  
+  for(i=0x800;i<=0xC00;i+=0x100)
+  {
+    if(((uint32*)(buf+1))[0]==0x580000E8 &&
+      ((unit32*)(buf+1))[1]==0x04B1CCFE)
+    {
+      // Complete identification attemp here
+    }
+  }
+}
+
+4、代码仿真
+该技术实现了一个虚拟机来仿真CPU和内存管理系统，进而模拟代码执行过程。
+
+
+
+
+
 
 
 
