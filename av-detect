@@ -90,6 +90,68 @@ for(p=0;p<0x700;p++)
 4、代码仿真
 该技术实现了一个虚拟机来仿真CPU和内存管理系统，进而模拟代码执行过程。
 
+例子：C实现16位IntelCPU的寄存器和标志位
+Typedef struct{
+  byte ah,al,bh,bl,ch,cl,dh,dl;
+  word si,di,sp,bp,cs,ds,es,ss,ip;}Emulator_Registers_t;
+Typedef struct{
+  byte c,z,p,s,o,d,i,t,a;}Emulator_Flags_t;
+代码仿真的目的是用虚拟寄存器和标志位来模拟CPU的指令集。
+例子：16位CPU仿真器代码片段
+opcode=read_mem(absadr(CPU->reg.ip,SEGM_CS,0))
+while(condition(opconde)&&(!CpuError))
+{
+  switch(opcode)
+  {
+    // All opcode listed here only one by one
+    // Only two examples are shown here
+    :
+    :
+  case 0x90; /* NOP instruction */
+    my_ip++;
+    break;
+    :
+    :
+  case 0xCD: /* INT instruction - execute an interrupt */
+    emulator_init_interrupt_stack();
+    emu_int(code,read_mem(absadr(CPU->reg.ip+1;SEGM_CS,0)));
+    my_ip++=2;
+  break;
+    :
+    :
+  }
+CPU->reg.ip+=my_ip;
+CPU->iterations++;
+opcode=read_mem(absadr(CPU->reg.ip,SEGM_CS,0));
+}
+
+/* Emulate Interrupts */
+void emu_int(byte opcode,byte opcode2)
+{
+  // DOS Version check?
+  if(opcode==0xcd && opcode2==0x21 && CPU->reg.ah==0x30)
+  {
+    CPU->reg.al = 3; CPU->reg.ah = 38; // DOS 3.38,wht not?
+    return;
+  }
+  :
+  :
+}
+
+如何可以停止仿真器运行？
+>跟踪活跃指令(active instruction)
+活跃指令是指那些修改虚拟内存中8位/16位或32位数值的指令。“对相邻位置进行修改”是多态病毒在内存中解密时的典型特征。
+>用特征图(profile)跟踪解密程序
+>用断点来停止
+可以为仿真器预设几个断点作为停止条件
+
+4.1用代码仿真来检测加密和多态病毒
+代码仿真
+
+
+
+
+  
 
 
 
