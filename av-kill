@@ -1,3 +1,22 @@
 # av-kill
 
+内存扫描的必要性：
+不访问磁盘的病毒（W32/CodeRed、W32/Slammer、WinNT/RemEx）
 
+1.引言
+Tremor病毒在内容中活跃时，染毒程序的大小及内容保持与未染毒时一致。
+
+2.WindowsNT虚拟内存系统
+多层访问
+
+3.虚拟地址空间
+“虚拟地址-物理地址”映射
+
+4.用户模式的内存扫描
+NtQuerySystemInformation()->ReadProcessMemory()->VirtualQueryEx()
+4.1NtQuerySystemInformation()
+4.2公共进程及特殊的系统权限
+OpenProcessToken(Token_Adjust_Privileges)->LookupPrivilegeValue()->AdjustTokenPrivileges()
+4.3Win32子系统中的病毒
+Csrss.exe(环境子系统程序)、内核模式设备驱动程序Win32k.sys和子系统DLL(user32.dll、advapi32.dll、gdi32.dll和kernel32.dll)
+4.4分配私有页面的Win32病毒
