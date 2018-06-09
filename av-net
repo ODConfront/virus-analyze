@@ -40,7 +40,12 @@ NIDS监听网络通信，检查通信的流向及内容
 
 7.早期预警系统
 
-
+8.蠕虫的网络行为模式
+8.1捕捉Blaster蠕虫
+8.2捕捉Linux/Slapper蠕虫
+8.3捕捉W32/Sasser.D蠕虫
+8.4捕捉W32/Welchia蠕虫的ping请求
+8.5检测W32/Slammer及相关的漏洞利用代码
 
 
 
