@@ -1,0 +1,48 @@
+# av-nids
+
+1.引言
+使用访问控制列表的路由器
+防火墙
+NIDS（网络入侵检测系统）
+蜜罐
+反击
+早期预警系统
+蠕虫捕获技术
+
+2.使用路由器访问列表
+路由器的首要责任是网络流量的导向
+
+3.防火墙保护
+防火墙的首要责任是保护网络访问的安全
+W32/CodeRed MS01-033("IIS")             TCP80
+W32/Blaster MS03-026("RPC/DCOM")        TCP135,TCP444,UDP69
+W32/Slammer MS02-039,MS02-061("MS-SQL") UDP1434
+W32/Sasser  MS04-011("LSASS")           TCP445,5554,9996
+W32/Dabber  Sasser漏洞                   TCP5554(Sasser),TCP8967,9898-9999
+W32/Korgo   MS04-011("LSASS")           TCP445,113,3067-3076,6667
+W32/Welchia MS03-026("RPC/DCOM")        TCP135,TCP80
+            MS03-007("WebDav")
+W32/Welchia.D MS03-026("RPC/DCOM")      TCP80,135,445
+            MS03-007("WebDav")
+            MS03-049("Workstation")     TCP3127(Mydoom)
+            MS03-001("Locator")
+            +Mydoom backdoor
+Linux/Slapper CAN-2002-0656             TCP80,443,UDP2002
+W32/Witty   ISSSA ICQ                   UDP 4000
+
+4.网络入侵检测系统
+NIDS监听网络通信，检查通信的流向及内容
+两种基本类型：基于网络特征(signature)的和基于网络流量及协议异常分析的
+
+5.蜜罐系统
+
+6.反击
+
+7.早期预警系统
+
+
+
+
+
+            
+            
