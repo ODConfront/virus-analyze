@@ -1,3 +1,39 @@
 # av-analyze
 
 1.个人的病毒分析实验室
+VMWare网络系统
+
+2.信息
+2.1系统结构指南
+2.2知识库
+
+3.VMWare上的专用病毒分析系统
+
+4.计算机病毒分析过程
+4.1准备
+4.1.1快速检查 - Dustbin/Boots
+4.1.2过滤 - VGrep/MIRA
+4.1.3残留物清除
+4.1.4病毒代码的快速检查 - HIEW/PEDUMP/elfd
+4.1.5字符串转储 - Strings
+4.1.6反汇编 - IDA
+4.1.7黑盒测试
+4.2脱壳 - OD
+4.3反汇编和解密
+4.4动态分析技术
+4.4.1文件变动监控 - Filemon/LADS
+4.4.2基于替罪羊文件的监控 - GOAT/NASM
+4.4.3注册表变动监控 - Regmon
+4.4.4进程和线程的监控 - ProcessMonitor/HandleEx
+4.4.5网络端口监控 - netstat/tcpview
+4.4.6网络窃听和捕获 - sniffer
+4.4.7系统调用跟踪
+4.4.8调试 -  SoftICE/OD/WinDBG/GDB
+4.4.9代码仿真 - 在Steroids上做病毒分析
+Virtual Analysis Toolkit - VAT
+
+5.维护恶意代码库
+
+6.自动分析：数字免疫系统
+
+
