@@ -1,4 +1,4 @@
-# virus-resource
+# Resource
 
 1. 在线分析：
 https://www.virustotal.com/
