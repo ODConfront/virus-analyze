@@ -1,0 +1,24 @@
+# 汇编中的C代码结构
+
+1.全局与局部变量 
+全局变量通过内存地址引用，局部变量通过栈地址引用
+全局变量调用：
+mov eax,dword_40CF60
+add eax,dword_40C000
+mov dword_40CF60,eax
+mov ecx,dword_40CF60
+push exc
+push offset aTotalD; "total=%d\n"
+call printf
+局部变量调用：
+mov dword ptr[ebp-4],1
+mov dword ptr[ebp-8],2
+mov eax,[ebp-4]
+add eax,[ebp-8]
+mov [ebp-4],eax
+mov ecx,[ebp-4]
+push ecx
+push offset aTotalD; "total=%d\n"
+call printf
+
+2.反汇编算术操作
