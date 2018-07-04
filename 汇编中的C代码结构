@@ -22,3 +22,31 @@ push offset aTotalD; "total=%d\n"
 call printf
 
 2.反汇编算术操作
+C:
+int a = 0;
+int b = 1;
+a = a + 11;
+a = a - b;
+a--;
+b++;
+b = a % 3;
+Asm:
+mov [ebp+var_4],0
+mov [ebp+var_8],1
+mov eax,[ebp+var_4]
+add eax,0Bh
+mov [ebp+var_4],eax
+mov ecx,[ebp+var_4]
+sub ecx,[ebp+var_8]
+mov [ebp+var_4],ecx
+mov edx,[ebp+var_4]
+sub edx,1
+mov [ebp+var_4],edx
+mov eax,[ebp+var_8]
+add eax,1
+mov [ebp+var_8],eax
+mov eax,[ebp+var_4]
+cdq
+mov ecx,3
+idiv ecx
+mov [ebp+var_8],edx
