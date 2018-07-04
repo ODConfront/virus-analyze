@@ -92,7 +92,14 @@ loc_40102B:
 push offset aXIsNotEqualToY; "x is not equal y.\n"
 call printf
 
-  
+4.1.识别for循环
+C:
+int i;
+for(i=0;i<100;i++)
+{
+  printf("i equal %d\n",i);
+}
+Asm:
 
 
 
