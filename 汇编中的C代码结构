@@ -3,6 +3,15 @@
 1.全局与局部变量 
 全局变量通过内存地址引用，局部变量通过栈地址引用
 全局变量调用：
+C:
+int x = 1;
+int y = 2;
+void main()
+{
+  x = x+y;
+  printf("Total=%d\n",x);
+}
+Asm:
 mov eax,dword_40CF60
 add eax,dword_40C000
 mov dword_40CF60,eax
@@ -11,6 +20,15 @@ push exc
 push offset aTotalD; "total=%d\n"
 call printf
 局部变量调用：
+C:
+void main()
+{
+  int x = 1;
+  int y = 2;
+  x = x+y;
+  printf("Total=%d\n",x);
+｝
+Asm:
 mov dword ptr[ebp-4],1
 mov dword ptr[ebp-8],2
 mov eax,[ebp-4]
@@ -50,3 +68,33 @@ cdq
 mov ecx,3
 idiv ecx
 mov [ebp+var_8],edx
+
+3.识别if语句
+C:
+int x = 1;
+int y = 2;
+if(x=y){
+  printf("x equal y.\n");
+}else{
+  printf("x is not equal y.\n");
+}:
+Asm:
+mov [ebp+var_4],1
+mov [ebp+var_8],2
+mov eax,[ebp+var_8]
+cmp eax,[ebp+var_4]
+jnz short loc_40102B
+push offset aXEqualsY_; "x equal y.\n"
+call printf
+add esp,4
+jmp short loc_401038
+loc_40102B:
+push offset aXIsNotEqualToY; "x is not equal y.\n"
+call printf
+
+  
+
+
+
+
+
