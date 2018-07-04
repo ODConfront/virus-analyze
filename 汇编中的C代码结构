@@ -100,7 +100,21 @@ for(i=0;i<100;i++)
   printf("i equal %d\n",i);
 }
 Asm:
-
+mov [ebp+var_4],0;
+jmp shot local_401016
+local_40100D:
+mov eax,[ebp+var_4]
+add eax,1
+mov [ebp+var_4],eax
+local_401016:
+cmp [ebp_var_4],64h
+jge shot_local_40102F
+mov ecx,[ebp+var_4]
+push eax
+push offset aID;
+call printf
+add esp,8
+jmp short locla_40100D
 
 
 
