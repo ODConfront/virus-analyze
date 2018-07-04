@@ -116,6 +116,28 @@ call printf
 add esp,8
 jmp short locla_40100D
 
+4.2.while循环
+C:
+int status=0;
+int result=0;
+while(status==0){
+  result = performAction();
+  status = checkResult(result);
+}
+Asm:
+mov [ebp+var_4],0
+mov [ebp,var_8],0
+local 401044:
+cmp [ebp+var_4],0
+jnz short loc_401063
+call performAction
+mov [ebp+var_8],eax
+mov eax,[ebp+var_8]
+push eax
+call checkResult
+add esp,4
+mov [ebp_var4],eax
+jmp shot loc_401044
 
 
 
