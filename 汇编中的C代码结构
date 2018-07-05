@@ -161,7 +161,7 @@ call test
 mov ret,eax
 [fastcall]:部分参数被传到寄存器(EDX和ECX)
 
-6.1Switch的if样式
+6.Switch
 C:
 switch(i)
 {
@@ -177,7 +177,7 @@ case 3:
 default:
   break;
 }
-Asm:
+Asm[if样式]:
 cmp [ebp+var_8],1
 jz  short loc_401027
 cmp [ebp+var_8],2
@@ -208,7 +208,7 @@ loc_401053:
     push offset unk_40C008
     call printf
     add esp,8
-    
+Asm[跳转表样式]:    
 
 
 
