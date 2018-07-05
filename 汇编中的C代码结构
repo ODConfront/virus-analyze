@@ -209,11 +209,35 @@ loc_401053:
     call printf
     add esp,8
 Asm[跳转表样式]:    
-
-
-
-
-
+sub ecx,1
+mov [ebp+var_8],ecx
+cmp [ebp+var_8],3
+ja short loc_401082
+mov edx,[ebp+var_8]
+jmp ds:off_401088[edx*4]
+loc_40102C:
+  ...
+  jmp short loc_401082
+loc_401042:
+  ...
+  jmp short loc_401082  
+loc_401058:
+  ...
+  jmp short loc_401082  
+loc_40106e:
+  ...
+  jmp short loc_401082  
+loc_401082:
+  xor eax,eax
+  mov esp,ebp
+  pop ebp
+  retn
+_main endp
+off_401088  dd  offset loc_40102C
+            dd  offset loc_401042
+            dd  offset loc_401058
+            dd  offset loc_40106E
+            
 
 
 
