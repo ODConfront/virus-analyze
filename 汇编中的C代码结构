@@ -177,7 +177,38 @@ case 3:
 default:
   break;
 }
-
+Asm:
+cmp [ebp+var_8],1
+jz  short loc_401027
+cmp [ebp+var_8],2
+jz  short loc_40103D
+cmp [ebp+var_8],3
+jz  short loc_401053
+jmp short loc_401067
+loc_401027:
+    mov ecx,[ebp+var_4]
+    add ecx,1
+    push ecx
+    push offset unk_40C000
+    call printf
+    add esp,8
+    jmp short loc_401067
+loc_40103D:
+    mov ecx,[ebp+var_4]
+    add ecx,2
+    push ecx
+    push offset unk_40C004
+    call printf
+    add esp,8
+    jmp short loc_401067   
+loc_401053:
+    mov ecx,[ebp+var_4]
+    add ecx,3
+    push ecx
+    push offset unk_40C008
+    call printf
+    add esp,8
+    
 
 
 
