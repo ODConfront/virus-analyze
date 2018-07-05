@@ -139,5 +139,24 @@ add esp,4
 mov [ebp_var4],eax
 jmp shot loc_401044
 
-
-
+5.函数调用约定
+C:
+int test(int x,int y,int z);
+int a,b,c,rst;
+rst = test(a,b,c);
+[cdecl]:参数从右往左入栈，当函数完成由调用者清理栈，返回值保持在EAX
+ASM:
+push c
+push b
+push a
+call test
+add esp,12
+mov ret,eax
+[stdcall]:被调用者清理栈
+ASM:
+push c
+push b
+push a
+call test
+mov ret,eax
+[fastcall]:部分参数被传到寄存器(EDX和ECX)
