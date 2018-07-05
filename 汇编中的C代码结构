@@ -160,3 +160,51 @@ push a
 call test
 mov ret,eax
 [fastcall]:部分参数被传到寄存器(EDX和ECX)
+
+6.1Switch的if样式
+C:
+switch(i)
+{
+case 1:
+  printf("i = %d",i+1);
+  break;
+case 2:
+  printf("i = %d",i+2);
+  break;
+case 3:
+  printf("i = %d",i+3);
+  break;  
+default:
+  break;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
