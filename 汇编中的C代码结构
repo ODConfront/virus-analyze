@@ -238,6 +238,36 @@ off_401088  dd  offset loc_40102C
             dd  offset loc_401058
             dd  offset loc_40106E
             
+7.反汇编数组
+C:
+int b[5]={123,87,487,7,798};
+void main()
+{
+int i;
+int a[5];
+for(i=0;i<5;i++)
+{
+  a[i]=i;
+  b[i]=i;
+}
+}
+Asm:
+mov [ebp+var_18],0
+jmp short loc_401018
+loc_40100F:
+mov eax,[ebp+var_18]
+add eax,1
+mov [ebp+var_18],eax
+loc_401018:
+cmp [ebp+var_18],5
+jge short loc_401037
+mov ecx,[ebp+var_18]
+mov edx,[ebp+var_18]
+mov [ebp+ecv*4+var_14],edx
+mov eax,[ebp+var_18]
+mov ecx,[ebp+var_18]
+mov dword_40A000[ecx*4],eax
+jmp short loc_40100F
 
 
 
