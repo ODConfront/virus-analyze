@@ -269,8 +269,72 @@ mov ecx,[ebp+var_18]
 mov dword_40A000[ecx*4],eax
 jmp short loc_40100F
 
-
-
+8.识别结构体
+C:
+struct my_structure{
+  int x[5];
+  char y;
+  double z;
+}
+struct my_structure *gms;
+void test(struct my_strcuture *q)
+{
+  int i;
+  q->y = 'a';
+  q->z = 15.6;
+  for(i=0;i<5;i++)
+  {
+    q->x[i]=i;
+  }
+}
+void main
+{
+  gms = (struct my_structure *)malloc(
+    sizeof(struct my_structure));
+  test(gms);  
+}
+Asm:
+[main]
+push ebp;
+mov ebp,esp;
+push 20
+call malloc
+add esp,4
+mov dword_40EA30,eax
+mov eax,dword_40EA30
+push eax,
+call sub_401000
+add esp,4
+xor eax,eax
+pop ebp
+retn
+[test]
+push ebp
+mov ebp,esp
+push ecx
+mov eax,[ebp+arg_0]
+mov byte ptr [eax+14h],61h
+mov ecx,[ebp+arg_0]
+fld ds:dbl_40B120
+fstp qword ptr [ecx+18h]
+mov [ebp+var_4],0
+jmp short loc_401029
+loc_401020:
+  mov edx,[ebp+var_4]
+  add edx,1
+  mov [ebp+var_4],edx
+loc_401029:
+  cmp [ebp+var_4],5
+  jge short local_40103D
+  mov eax,[ebp+var_4]
+  mov ecx,[ebp+arg_0]
+  mov edx,[ebp+var_4]
+  mov [ecx+eax*4],edx
+  jmp short loc_401020
+loc_40103D:
+  mov esp,ebp
+  pop ebp
+  retn
 
 
 
