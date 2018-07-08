@@ -336,6 +336,35 @@ loc_40103D:
   pop ebp
   retn
 
+9.分析链表遍历
+C:
+struct node
+{
+  int x;
+  struct node *next;
+};
+typedef struct node pnode;
+void main
+{
+  pnode * curr, * head;
+  int i;
+  head = NULL;
+  for(i=0;i<=10;i++)
+  {
+    curr = (pnode *)malloc(sizeof(pnode));
+    curr->x = i;
+    curr->next = head;
+    head = curr;
+  }
+  curr = head;
+  while(curr)
+  {
+    printf("%d\n",curr->x);
+    curr = curr->next;
+  }
+}
+Asm:
+
 
 
 
