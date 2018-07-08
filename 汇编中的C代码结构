@@ -364,6 +364,43 @@ void main
   }
 }
 Asm:
+mov [ebp+var_8],0
+mov [ebp+var_C],1
+loc_401078:
+  cmp [ebp+var_C],0Ah
+  jg short loc_4010AB
+  mov [esp+18h+var_18],8
+  call malloc
+  mov [ebp+var_4],eax
+  mov edx,[ebp+var_4]
+  mov eax,[ebp+var_C]
+  mov [eax],eax
+  mov edx,[ebp+var_4]
+  mov eax,[ebp+var_8]
+  mov [edx+4],eax
+  mov eax,[ebp+var_4]
+  mov [ebp+var_8],eax
+  lea eax,[ebp+var_C]
+  inc dword ptr [eax]
+  jmp short loc_401078
+loc_4010AB:
+  mov eax,[ebp,var_8]
+  mov [ebp,var_8],eax
+loc_4010B1:
+  cmp [ebp+var_4],0
+  jz short local_4010D7
+  mov eax,[ebp+var_4]
+  mov eax,[eax]
+  mov [esp+18h+var_14],eax
+  mov [esp+18h+var_18],offset aD;"%d\n"
+  call printf
+  mov eax,[ebp+var_4]
+  mov eax,[eax+4]
+  mov [ebp+var_4],eax
+  jmp short local_4010B1
+  
+
+
 
 
 
