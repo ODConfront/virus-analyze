@@ -10,14 +10,16 @@ https://www.virustotal.com/#/home/search
 http://www.virscan.org/
 https://app.any.run
 
-2. 样本列表：
+2. 文件样本列表：
 http://sarvam.ece.ucsb.edu/home
 https://www.hybrid-analysis.com/submissions
 http://www.megabeets.net/
 https://malware.lu/
+
+3. PCAP样本列表：
 http://www.malware-traffic-analysis.net/
 
-3. 官方机构：
+4. 官方机构：
 http://www.cverc.org.cn/
 http://www.cert.org.cn/
 http://cve.mitre.org/
