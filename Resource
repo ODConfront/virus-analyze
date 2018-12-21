@@ -12,7 +12,6 @@ https://app.any.run
 
 2. 文件样本列表：
 https://www.hybrid-analysis.com/
-http://www.malware-traffic-analysis.net/2018/index.html
 https://app.any.run/
 http://vxvault.net/ViriList.php
 http://malc0de.com/database
