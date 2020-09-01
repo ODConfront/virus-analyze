@@ -1,0 +1,45 @@
+1. XOR
+XOR加密使用一个静态字节值，通过与该值执行逻辑异或运算来修改明文中的每个字节。
+要解密用XOR加密算法加密的数据，仅需使用加密密钥再次XOR加密数据即可。
+保留NULL的单字节XOR加密
+其它一些单字节加密算法：
+ADD，SUB
+ROL，ROR
+ROT
+Mulitibyte
+链或者环
+
+2. Base64
+Base64加6密用ASCII字符串格式表示二进制数据。
+Base64编码将二进制数据转化成64个字符的有限字符集，通常用一个额外字符表示填充“=”。
+最常用的字符集是MIME Base64，它使用A~Z、a~z和0~9作为前62个值，+和/作为最后两个值。
+数据转成Base64：使用24位(3个字节)的块。
+加密：每个字符转成6个比特位，以8位一组读取比特位。
+如何识别：字符串（补齐）被4整除，含Base64加密代码存在64字符组成的加密字符串；存在一个单独填充字符“=”。
+其它变种：
+索取字符串重定位：aABCDEFGH......789+/
+
+3. 常见的加密算法
+3.1 识别字符串和导入："OpenSSL"、IDA导入表Crypt/CP/Cert的前缀函数
+3.2 查找加密常量：IDA插件FindCrypt2和Krypto ANALyzer
+3.3 查找高熵值内容：
+
+4. 自定义加密
+识别自定义加密：IDA调用图解析
+
+5. 解密
+一般通过“重新编写函数”或“恶意代码中存在的函数”实现解密
+5.1 自解密：程序自己完成解密 - 代码模拟器/虚拟机执行
+5.2 手动执行解密函数
+5.2.1 python解密Base64
+标准字符串索引
+# import string
+# import base64
+# example_string = "VGhpcyBpcyBhIHRLc3Qgc3RyaWSn"　
+# print base64.decodestring(example_string)
+保留NULL字符串XOR
+# def null_preserving_xor(input_char,key_char):
+#   if(input_char == key_char or input_char == chr(0x00)):
+#     return input_char
+#   else:
+#     return chr(ord(input_char) ^　ｏｒｄ（ｋｅｙ＿ｃｈａｒ）)
