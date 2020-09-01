@@ -1,0 +1,275 @@
+Github上WebShell相关项目分析汇总
+
+背景：
+Github上的WebShell相关项目较杂，黑项目可直接添加特征报毒，但白项目与一些工具类的项目不适合直接添加特征进行报毒，需要结合检测场景与报毒策略来决定是否在产品显示报毒，因此对所有项目进行了属性鉴定。
+
+方案：
+1.需要确认具体报毒策略，可采用以下方式：
+1） 黑、白、HackTool、NotVirus方式
+2） 分值方式，不同等级样本给予不同分值
+2.产品上根据扫描场景决定是否报毒
+1） 如HackTool在企业内网等需要绝对安全的场景下报毒，在普通用户场景下可不报毒
+2） 内网穿透等正常软件在企业内网下根据合规情况调整扫描结果是否报毒
+3.需要确认查杀标准，什么样的文件查杀，什么样的文件放过，如
+1） 一些大马会有一些模块化文件，这些模块化文件是否进行查杀？模块可能是公开的公共模块，也可能是黑客所写模块，很难确认，查杀可能会误报，不查杀可能会漏报
+2） 一些模块是非常正常的文件，只是一些正常的操作，不宜查杀。但如果放到企业内网里，可能会造成漏报
+黑样本直接由杀毒引擎查杀，HackTool与Tool类由产品根据不同使用场景来决定是否报毒。
+
+项目属性定义如下：
+黑：webshell相关项目，杀毒引擎添加特征查杀
+白：正常无害项目，不进行查杀处理
+HackTool：黑客工具类，非直接webhsell后门，常用于管理webshell后门的工具
+Tool：工具类，正常功能性工具项目，但黑客也可使用用作后门等
+
+项目	                                      属性	     分析详情
+https://github.com/spencertipping/webshell	HackTool	74acfe8c9285c00a8eaf26da961dfbcb webshell-master/reflect.php 中间使用的反射工具
+https://github.com/pikeman20/webshell	HackTool	b374k webshell in docker
+https://github.com/wangxiaozhi123/WebShell	HackTool	Docker项目，Dcoker启动webshell
+https://github.com/bao7uo/PKI_WebShell	HackTool	pki webshell 生成工具
+https://github.com/agileworks-tw/pm2-webshell	HackTool	pm2-webshell 黑客工具
+https://github.com/mperlet/pomsky	HackTool	pomsky 工具
+https://github.com/s270987763/Guillotines	HackTool	webshell 黑客工具
+https://github.com/abcdlzy/webshell-manager	HackTool	webshell管理工具
+https://github.com/Laworigin/Coconut-Tree	HackTool	webshell管理工具
+https://github.com/P0desta/pnode	HackTool	webshell管理工具
+https://github.com/c0delatte/carina	HackTool	webshell管理工具
+https://github.com/asinfotrack/yii2-webshell	HackTool	webshell管理工具
+https://github.com/WAY29/Doughnuts	HackTool	webshell管理工具，连接websshell
+https://github.com/humhub-contrib/webshell	HackTool	webshell模块
+https://github.com/riswandans/remoteshell	HackTool	webshell生成工具
+ad3c9920df258f5450cfc05a50e42f77 remoteshell-master/examples/reshell.php 黑
+https://github.com/FunnyWolf/pystinger	HackTool	黑客代理工具
+https://github.com/boy-hack/WebshellManager	HackTool	黑客工具，一句话木马管理平台，本身不是webshell，工程化项目，模块多，但模块功能均无显示恶意
+https://github.com/Ares-X/AWD-Predator-Framework	HackTool	黑客工具类
+https://github.com/HountryLiu/SshWebShell	HackTool	基于SSH协议的WebShell系统
+https://github.com/matricali/x3n4	HackTool	基于webshell，远程管理工具
+https://github.com/keepwn/Altman	HackTool	渗透测试工具
+https://github.com/chrisallenlane/novahot	HackTool	渗透测试工具
+https://github.com/thesunRider/firedrill	HackTool	隧道工具
+https://github.com/guillaC/wsManager	HackTool	一句话木马管理平台
+https://github.com/WangYihang/Webshell-Sniper	HackTool	一句话木马连接工具
+https://github.com/nil0x42/phpsploit	HackTool	一句话木马连接工具
+https://github.com/edibledinos/weevely3-stealth	HackTool	一种在运行时通过网络动态扩展的命令行Web shell，设计用于远程服务器管理和渗透测试。
+https://github.com/sinkaroid/Shell-Checker	HackTool	用于跟踪您的webshel​​l（外壳上传到您的受害者上）的php源，以识别是否仍然找到或消失
+https://github.com/gokyle/webshell	Tool	GO项目
+https://github.com/SecarmaLabs/chunkyTuna	Tool	HTTP隧道的TCP
+https://github.com/lf1029698952/kube-webshell	Tool	k8s web管理工具
+https://github.com/zhaojh329/rttys	Tool	rtty - 在任何地方通过Web访问您的设备的终端
+https://github.com/zhaojh329/rtty	Tool	rtty - 在任何地方通过Web访问您的设备的终端
+https://github.com/djoq/docker-pm2-webshell	Tool	shell 启动 Webshell docker
+https://github.com/openspug/spug	Tool	Spug是面向中小型企业设计的轻量级无Agent的自动化运维平台
+https://github.com/zuiwuchang/webpc	Tool	web文件服务
+https://github.com/samdark/yii2-webshell	Tool	web页面管理工具
+https://github.com/yiiext/webshell-module	Tool	web页面管理工具
+https://github.com/davtur19/Emoji-Obfuscation	Tool	表情混淆工具
+https://github.com/zsxsoft/webshellkill-cli	白	D盾命令行工具
+https://github.com/z977780633/webshell	白	echo test
+https://github.com/secrule/falcon	白	Falcon是一款基于inotify-tools 开发的Web服务器文件监控平台
+https://github.com/hisham-elbreky/WebShell	白	js文件
+https://github.com/desdulianto/log-scanner	白	log scanner
+https://github.com/chenkexv/CQuickFramework	白	PHP MVC 框架
+https://github.com/baidu-security/webshell-scanner-client	白	webshell scanner的Go项目，其中包含测试样本，链接如下：https://github.com/baidu-security/webshell-scanner-client/tree/master/samples
+https://github.com/zerokeeper/ML-WEBSHELL	白	webshell 检测工具
+https://github.com/jincon/KillShell	白	webshell 木马扫描工具
+https://github.com/Chrissy-Morgan/PHP-Webshell-DeObfuscator	白	webshell反混淆工具，其中包含测试样本，链接如下：https://github.com/Chrissy-Morgan/PHP-Webshell-DeObfuscator/blob/master/Sample.php
+https://github.com/jvoisin/php-malware-finder	白	webshell检测工具，其中包含测试样本，链接如下：https://github.com/jvoisin/php-malware-finder/tree/master/php-malware-finder/samples
+https://github.com/ddcunningham/crude-shellhunter	白	webshell扫描工具
+https://github.com/andrefernandes/docker-webshell	白	webshell相关项目
+https://github.com/p0st3r/WordNG-vec_WebShell_detect	白	WordNG Webshell检测工具normal 路径下正常php文件webshell路径下为黑客漏洞利用工具
+https://github.com/chiruom/Webshell_finder	白	检测工具
+https://github.com/DeepSkyFire/WebShellQuickScanner	白	检测工具
+https://github.com/zhl2008/webshell_detector	白	检测工具
+https://github.com/runvirus/archimedes	白	检测工具
+https://github.com/binfed/xunfeng-webshell	白	检测工具
+https://github.com/Greatfar/php-webshellkiller	白	检测工具
+https://github.com/ecstatic-nobel/Analyst-Arsenal	白	检测工具
+https://github.com/3riccc/webshell_finder	白	检测工具
+https://github.com/cumulodev/nimbusec-plesk	白	检测工具
+https://github.com/cylab-be/webshell-detector	白	检测工具
+9https://github.com/cylab-be/webshell-detector	白	检测工具
+https://github.com/thonsun/Lua_Nginx_Webshell_Detection	白	检测工具
+Lua_Nginx_Webshell_Detection-master/webshell/ 路径下为黑测试webshell文件
+https://github.com/0v3rW4tch/webshell_detect_cms	白	检测工具normal路径下为白phpwebshell路径下为黑webshell文件
+https://github.com/lcatro/WebShell-Detect-By-Machine-Learning	白	检测工具，内部包含测试样本，链接如下：https://github.com/lcatro/WebShell-Detect-By-Machine-Learning/tree/master/shell
+https://github.com/mylamour/Oops-Webshell	白	检测工具，其中包含测试样本（暂时为空），链接如下：https://github.com/mylamour/Oops-Webshell/tree/master/uploads/blacksamples
+https://github.com/Coldwave96/WebShell-Detection_System	白	检测工具，其中包含测试样本，链接如下：https://github.com/Coldwave96/WebShell-Detection_System/tree/master/Data问题项目：未正确爬取下来文件
+https://github.com/k0u5uk3/obfuscated-php-webshell-detector	白	检测工具，其中包含测试样本，链接如下：https://github.com/k0u5uk3/obfuscated-php-webshell-detector/tree/master/t/malware
+https://github.com/tengzhangchao/MaskFindShell	白	检测工具，其中包含测试样本，链接如下：https://github.com/tengzhangchao/MaskFindShell/tree/master/test
+https://github.com/wh1t3p1g/MonitorServer	白	同一局域网内的网站源码监控控制端
+https://github.com/al0ne/LinuxCheck	白	一个linux信息搜集小脚本 主要用于应急响应
+https://github.com/huge818/webshell	白	原来存储的是kodexplorer，项目已经被删除
+https://github.com/bvillac/webshell	白	
+https://github.com/Samorodek/humhub-modules-webshell	白	
+https://github.com/raydoom/mmanager	白	
+https://github.com/lanjelot/WSTest	白	
+https://github.com/nako48/Checker-webshell	白	
+https://github.com/forfrt/PHP_Webshell_Sandbox	白	
+https://github.com/jubal-R/TinyWebShell	白	
+https://github.com/zocky/shell	白	
+https://github.com/bittorrent3389/Webshell	黑	2个webshell
+https://github.com/ziqiaozhou/webshell	黑	48101bbdd897877cc62b8704a293a436 webshell-master/index.php 灰，显示phpinfo
+https://github.com/AVGP/Wesh	黑	js webshell
+https://github.com/FunnyWolf/ghostmirror	黑	webshell 内网穿透
+https://github.com/z3robat/webshell	黑	webshell集合
+https://github.com/Drchenyuan/phpshell	黑	webshell集合
+https://github.com/aghanathan/HaCKeD	黑	webshell集合
+https://github.com/datasiph0n/MyBB-Shell-Plugin	黑	webshell集合
+https://github.com/SuryaMaulana/webshellbackdoor	黑	webshell集合
+https://github.com/Learn2Better/51mp3L-Web-Backdoor	黑	webshell集合
+https://github.com/florienzh4x/webshell	黑	webshell集合
+https://github.com/grCod/poly	黑	webshell生成器，包含生成的webshell
+https://github.com/matiasmenares/Shuffle	黑	webshell生成器，包含生成的webshell
+https://github.com/pascal-gujer/webshellz	黑	webshell收集，内含少量黑客工具如下0f21cf364a925709c8c02aa3d2c1a049 webshellz-master/rootshell.php8fd3e136e7ca71511a5e2d61418bdfb2 webshellz-master/phpFileManager.php
+https://github.com/twepl/wso	黑	wso webshell，文件管理，也可判黑客工具
+https://github.com/fupinglee/SpringBootWebshell	黑	其中 3214ad3793596858219bb21aa8ede7a6 SpringBootWebshell-master/src/main/webapp/test.jsp 白
+https://github.com/wireghoul/htshells	黑	通过覆盖.htaccess文件达到开启cgi功能，或直接投放后门的文件
+https://github.com/SecurityRiskAdvisors/cmd.jsp	黑	问题项目：未正确爬取下来文件
+https://github.com/oneoneplus/webshell	黑	问题项目：未正确爬取下来文件
+https://github.com/second-constantine/web-shell	黑	问题项目：未正确爬取下来文件
+https://github.com/BlackArch/webshells	黑	项目为黑，包含收集的webshell，但存在一些HackTool文件
+https://github.com/xl7dev/WebShell	黑	项目为黑，包含收集的webshell，但存在一些白文件
+https://github.com/tanjiti/webshellSample	黑	项目为黑，包含收集的webshell，但存在一些白文件
+https://github.com/b374k/b374k	黑	
+https://github.com/k4mpr3t/b4tm4n	黑	
+https://github.com/Smaash/quasibot	黑	
+https://github.com/backlion/webshell	黑	
+https://github.com/xypiie/WebShell	黑	
+https://github.com/tennc/webshell	黑	
+https://github.com/ysrc/webshell-sample	黑	
+https://github.com/JohnTroony/php-webshells	黑	
+https://github.com/bartblaze/PHP-backdoors	黑	
+https://github.com/malwares/WebShell	黑	
+https://github.com/LandGrey/webshell-detect-bypass	黑	
+https://github.com/JoyChou93/webshell	黑	
+https://github.com/linuxsec/indoxploit-shell	黑	
+https://github.com/mIcHyAmRaNe/wso-webshell	黑	
+https://github.com/s0md3v/nano	黑	
+https://github.com/lcatro/PHP-WebShell-Bypass-WAF	黑	
+https://github.com/Macr0phag3/WebShells	黑	
+https://github.com/x-o-r-r-o/PHP-Webshells-Collection	黑	
+https://github.com/WhiteWinterWolf/wwwolf-php-webshell	黑	
+https://github.com/dotcppfile/DAws	黑	
+https://github.com/S9MF/S9MF-php-webshell-bypass	黑	
+https://github.com/antonioCoco/SharPyShell	黑	
+https://github.com/3xp10it/xwebshell	黑	
+https://github.com/linuxsec/shu-shell	黑	
+https://github.com/grCod/webshells	黑	
+https://github.com/blackhalt/WebShells	黑	
+https://github.com/The404Hacking/b374k-mini	黑	
+https://github.com/Tools2/jsp-webshell	黑	
+https://github.com/CosasDePuma/SecurityNotFound	黑	
+https://github.com/phpshellxyz/webshell	黑	
+https://github.com/Greatfar/php-webshell	黑	
+https://github.com/Josexv1/wso-webshell	黑	
+https://github.com/0xpwntester/webshells	黑	
+https://github.com/threatexpress/subshell	黑	
+https://github.com/jgor/php-jpeg-shell	黑	
+https://github.com/linuxsec/hacking-tools	黑	
+https://github.com/evil7/webshell	黑	
+https://github.com/alert0/webshellch	黑	
+https://github.com/justalinko/webshell	黑	
+https://github.com/abdilahrf/Kerang	黑	
+https://github.com/xpress99/webshell	黑	
+https://github.com/verctor/BShell	黑	
+https://github.com/yakir-wizman/SSI-Webshell	黑	
+https://github.com/Cvar1984/Deface	黑	
+https://github.com/lanzous/encryptshell	黑	
+https://github.com/ayiis/webShell	黑	
+https://github.com/hackingyseguridad/webshell	黑	
+https://github.com/needle-wang/jweevely	黑	
+https://github.com/k4mpr3t/b4tm4n-toolz	黑	
+https://github.com/AngelSecurityTeam/Encryptor_Shell	黑	
+https://github.com/BustedSec/webshell	黑	
+https://github.com/suxianbaozi/webshell	黑	
+https://github.com/drag0s/php-webshell	黑	
+https://github.com/yidas/webshell	黑	
+https://github.com/security007/security007-webshell	黑	
+https://github.com/ttttmr/php-fpm	黑	
+https://github.com/lordparody/Lolshells	黑	
+https://github.com/aranciaga/drugged-cat	黑	
+https://github.com/MegaBedder/wsoshell	黑	
+https://github.com/indoxploit-coders/tmp-shell	黑	
+https://github.com/wangeradd1/myWebShell	黑	
+https://github.com/icukeup/webshell	黑	
+https://github.com/MrSaighnal/square-webshell	黑	
+https://github.com/KINGSABRI/WebShellConsole	黑	
+https://github.com/0x4E0x650x6F/pwn4jshell	黑	
+https://github.com/ThePacketBender/webshells	黑	
+https://github.com/abdulgaphy/webshell	黑	
+https://github.com/zypperin/JSPBackdoor	黑	
+https://github.com/zaphoxx/php-webshell	黑	
+https://github.com/p410n3/palone-webshell	黑	
+https://github.com/anoaghost/Webshell_Backdoor	黑	
+https://github.com/x0heart17/php-webshell	黑	
+https://github.com/CBiu/RSAWebShell	黑	
+https://github.com/mrwn007/007webshellManager	黑	
+https://github.com/leezp/webshell	黑	
+https://github.com/yuk119/webshell	黑	
+https://github.com/TmmmmmR/webshell	黑	
+https://github.com/rosonsec/Shells	黑	
+https://github.com/hexageek1337/H3xagonPublic	黑	
+https://github.com/hahadaxia/webshellcat	黑	
+https://github.com/alexbires/webshellmanagement	黑	
+https://github.com/0xmitnick/webshells	黑	
+https://github.com/nizarbamida/webshells	黑	
+https://github.com/Razican/webShell	黑	
+https://github.com/DeEpinGh0st/PHP-bypass-collection	黑	
+https://github.com/AlessandraZullo/shellImage	黑	
+https://github.com/project-insecurity/StealthShell	黑	
+https://github.com/Unam3dd/MyFirstWebShell	黑	
+https://github.com/daniellowrie/WebShell-v1	黑	
+https://github.com/RayRicardo69/ShadowShell	黑	
+https://github.com/shinettg/JSP-Webshell	黑	
+https://github.com/one-eyed/Sheller	黑	
+https://github.com/yumusb/RSA_WEBSHELL	黑	
+https://github.com/shellord/ctrshell	黑	
+https://github.com/noalh8t/simple-webshell	黑	
+https://github.com/maj0rmil4d/simple_webshell	黑	
+https://github.com/timwhitez/useless-webshell	黑	
+https://github.com/BADC0D3/WebShellCreator	黑	
+https://github.com/PhenixTN/Webshell-Mass-Checker	黑	
+https://github.com/TundaraPhP/Very-simple-Webshell	黑	
+https://github.com/nako48/Tatsumi-WebShell	黑	
+https://github.com/danielsagi/php-simple-webshell	黑	
+https://github.com/lojikil/tinyshell	黑	
+https://github.com/captainnatebeard/oscpHelper	黑	
+https://github.com/stormdark/BackdoorPHP	黑	
+https://github.com/goghcrow/mid-autumn-shell	黑	
+https://github.com/ramprasadar/web-shells	黑	
+https://github.com/Kap0k/caidao_encrypt	黑	
+https://github.com/Cvar1984/R2	黑	
+https://github.com/AnonymousVenezuela/Shells	黑	
+https://github.com/Y4er/tomcat_Memshell	黑	
+https://github.com/Kitsun3Sec/Kitsun3Shell	黑	
+https://github.com/selimcanozdemir/php-webshells	黑	
+https://github.com/threedr3am/JSP-Webshells	黑	
+https://github.com/volcanohatred/webshell-bypass	黑	
+https://github.com/abazad/SlotBot-V1.2-beta	黑	
+https://github.com/Sejkii-bot/WebShell	黑	
+https://github.com/dimas71/webshell	黑	
+https://github.com/win3zz/Webshell	黑	
+https://github.com/Go0p/emmmm	Tool	webshell检测工具
+https://github.com/0x6b7966/AST_Webshell_Detect	白	Webshell检测引擎
+https://github.com/fragileeye/WebshellKiller	白	webshell检测工具，其中包含测试样本，链接：https://github.com/fragileeye/WebshellKiller/tree/master/Samples
+https://github.com/12345bt/webshell	黑	webshell样本集合
+https://github.com/53jk1/ImgShell	黑	
+https://github.com/abhinavprasad47/Awsome-Webshells	黑	shell样本集合
+https://github.com/amev0207/Webshell	黑	绕过webshell样本
+https://github.com/China-Eugene/webshell	黑	webshell样本集合
+https://github.com/cnsimo/TomcatFilterInject	黑	Tomcat基于动态注册Filter的无文件Webshell
+https://github.com/codeT/collectWebShell	黑	webshell样本集合
+https://github.com/fathurwalkers/webshell	黑	webshell样本集合
+https://github.com/HacTF/shell-collecting	黑	webshell样本集合，其中包含一些被管家清除后的lnk文件
+https://github.com/jjjmaracay3/webshells	黑	webshell样本集合
+https://github.com/jozxing/webshell	黑	webshell样本集合
+https://github.com/kjyc1/jsp-webshell	黑	Bypass WAF
+https://github.com/LuciferoO/webshell-collector	黑	webshell样本集合
+https://github.com/Macr0phag3/webshell-bypassed-human	黑	webshell免杀工具
+https://github.com/nico-duitsmann/Hexa	黑	webshll
+https://github.com/poions/WebShell-1	黑	webshell样本集合
+https://github.com/r57shell/webshell	黑	webshell样本集合
+https://github.com/Ringo233/Copy-bypass-webshell	黑	bypass webshell
+https://github.com/soracyberteam/minimalis-webshell	黑	webshell样本
+https://github.com/xiaoxiaoleo/xiao-webshell	黑	webshell黑客工具
+https://github.com/YS-Neko/Webshell-Collection	黑	webshell样本
+https://github.com/z1Ro0/tomcat_nofile_webshell	黑	Tomcat基于动态注册Filter的无文件Webshell
