@@ -1,6 +1,6 @@
 # Resource
 
-1. 在线分析：
+1. Analyze：
 https://www.virustotal.com/
 https://habo.qq.com/
 https://manalyzer.org/
@@ -10,7 +10,7 @@ https://www.virustotal.com/#/home/search
 http://www.virscan.org/
 https://app.any.run
 
-2. 文件样本列表：
+2. File：
 https://www.hybrid-analysis.com/
 https://app.any.run/
 http://vxvault.net/ViriList.php
@@ -22,10 +22,10 @@ https://www.hybrid-analysis.com/submissions
 http://www.megabeets.net/
 https://malware.lu/
 
-3. PCAP样本列表：
+3. PCAP：
 http://www.malware-traffic-analysis.net/
 
-4. 官方机构：
+4. CVE：
 http://www.cverc.org.cn/
 http://www.cert.org.cn/
 http://cve.mitre.org/
